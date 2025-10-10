@@ -1,0 +1,12 @@
+# Temporary files
+*.tmp
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Kubernetes
+kubeconfig
