@@ -4,11 +4,11 @@ metadata:
   name: chama-production
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-username/chama-gitops.git
+    repoURL: https://github.com/Gitauwairimu/chama-gitops.git
     targetRevision: main
     path: apps/production
   destination:
@@ -16,7 +16,7 @@ spec:
     namespace: chama-production
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
