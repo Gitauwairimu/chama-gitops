@@ -8,10 +8,10 @@ resources:
 images:
   - name: gitauwairimu/chama-backend
     newName: gitauwairimu/chama-backend
-    newTag: v1.0.75-feature-fix-dashboard-connections
+    newTag: v1.0.82-feature-fix-dashboard-connections
   - name: gitauwairimu/chama-frontend
     newName: gitauwairimu/chama-frontend
-    newTag: v1.0.75-feature-fix-dashboard-connections
+    newTag: v1.0.82-feature-fix-dashboard-connections
 
 patchesStrategicMerge:
   - backend-patch.yaml
