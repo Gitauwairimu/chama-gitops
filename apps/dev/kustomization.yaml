@@ -8,10 +8,10 @@
 # images:
 #   - name: gitauwairimu/chama-backend
 #     newName: gitauwairimu/dev-backend
-#     newTag: 1.2.2-dc945a7-dev
+#     newTag: 1.2.3-475f83a-dev
 #   - name: gitauwairimu/chama-frontend
 #     newName: gitauwairimu/dev-frontend
-#     newTag: 1.2.2-dc945a7-dev
+#     newTag: 1.2.3-475f83a-dev
 
 # patchesStrategicMerge:
 #   - backend-patch.yaml
@@ -47,10 +47,10 @@ resources:
 images:
   - name: gitauwairimu/chama-backend
     newName: gitauwairimu/dev-backend
-    newTag: latest
+    newTag: 1.2.3-475f83a-dev
   - name: gitauwairimu/chama-frontend
     newName: gitauwairimu/dev-frontend
-    newTag: latest
+    newTag: 1.2.3-475f83a-dev
 
 # REPLACE patchesStrategicMerge with patches
 patches:
