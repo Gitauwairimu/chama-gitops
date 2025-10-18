@@ -8,10 +8,10 @@ resources:
 images:
   - name: gitauwairimu/chama-backend
     newName: gitauwairimu/chama-backend
-    newTag: 1.0.0-dbd8b12
+    newTag: 1.0.0-f155e4e
   - name: gitauwairimu/chama-frontend
     newName: gitauwairimu/chama-frontend
-    newTag: 1.0.0-dbd8b12
+    newTag: 1.0.0-f155e4e
 
 patchesStrategicMerge:
   - backend-patch.yaml
