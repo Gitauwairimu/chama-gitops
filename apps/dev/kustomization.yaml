@@ -1,43 +1,5 @@
-# apiVersion: kustomize.config.k8s.io/v1beta1
-# kind: Kustomization
-# namespace: chama-dev
-
-# resources:
-#   - ../base
-
-# images:
-#   - name: gitauwairimu/chama-backend
-#     newName: gitauwairimu/chama-backend
-#     newTag: 1.2.2-b0687d1-dev
-#   - name: gitauwairimu/chama-frontend
-#     newName: gitauwairimu/chama-frontend
-#     newTag: 1.2.2-b0687d1-dev
-
-# patchesStrategicMerge:
-#   - backend-patch.yaml
-#   - frontend-patch.yaml
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-apiVersion: kustomize.config.kustomize.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 namespace: chama-dev
 
 resources:
@@ -45,22 +7,12 @@ resources:
 
 images:
   - name: gitauwairimu/chama-backend
-    newName: gitauwairimu/dev-backend
-    newTag: latest
+    newName: gitauwairimu/chama-backend
+    newTag: 1.2.2-b0687d1-dev
   - name: gitauwairimu/chama-frontend
-    newName: gitauwairimu/dev-frontend
-    newTag: latest
+    newName: gitauwairimu/chama-frontend
+    newTag: 1.2.2-b0687d1-dev
 
-patches:
-  - target:
-      kind: Deployment
-      name: backend
-    path: backend-patch.yaml
-  - target:
-      kind: Deployment
-      name: frontend
-    path: frontend-patch.yaml
-
-labels:
-  - pairs:
-      environment: dev
+patchesStrategicMerge:
+  - backend-patch.yaml
+  - frontend-patch.yaml
