@@ -1,5 +1,27 @@
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+# namespace: chama-production
+
+# resources:
+#   - ../base
+
+# images:
+#   - name: gitauwairimu/chama-backend
+#     newName: gitauwairimu/prod-backend
+#     newTag: 1.2.2-dc945a7-prod
+#   - name: gitauwairimu/chama-frontend
+#     newName: gitauwairimu/prod-frontend
+#     newTag: 1.2.2-dc945a7-prod
+
+# patchesStrategicMerge:
+#   - backend-patch.yaml
+#   - frontend-patch.yaml
+
+
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 namespace: chama-production
 
 resources:
@@ -13,6 +35,13 @@ images:
     newName: gitauwairimu/prod-frontend
     newTag: 1.2.2-dc945a7-prod
 
-patchesStrategicMerge:
-  - backend-patch.yaml
-  - frontend-patch.yaml
+# Use the new patches format instead of deprecated patchesStrategicMerge
+patches:
+  - path: backend-patch.yaml
+    target:
+      kind: Rollout
+      name: backend
+  - path: frontend-patch.yaml
+    target:
+      kind: Deployment
+      name: frontend
