@@ -8,6 +8,7 @@ spec:
     spec:
       containers:
       - name: backend
+        image: gitauwairimu/prod-backend:1.2.4-3bc8f5d-prod  # ADD THIS LINE
         env:
         - name: ENVIRONMENT
           value: "production"
