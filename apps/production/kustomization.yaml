@@ -33,13 +33,12 @@ images:
     newTag: 1.2.5-c96001a-prod
   - name: gitauwairimu/chama-frontend
     newName: gitauwairimu/prod-frontend
-    newTag: 1.2.5-c96001a-prod
+    newTag: 1.2.4-3bc8f5d-prod
 
-# Use the new patches format instead of deprecated patchesStrategicMerge
 patches:
   - path: backend-patch.yaml
     target:
-      kind: Rollout
+      kind: Deployment  # Changed from Rollout
       name: backend
   - path: frontend-patch.yaml
     target:

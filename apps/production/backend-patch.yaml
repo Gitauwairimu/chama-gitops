@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: backend
 spec:
@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gitauwairimu/prod-backend:1.2.4-3bc8f5d-prod  # ADD THIS LINE
+        image: gitauwairimu/prod-backend:1.2.4-3bc8f5d-prod
         env:
         - name: ENVIRONMENT
           value: "production"
