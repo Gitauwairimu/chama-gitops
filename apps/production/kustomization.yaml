@@ -8,10 +8,10 @@
 # images:
 #   - name: gitauwairimu/chama-backend
 #     newName: gitauwairimu/prod-backend
-#     newTag: 1.2.5-c96001a-prod
+#     newTag: 1.2.6-58a513a-prod
 #   - name: gitauwairimu/chama-frontend
 #     newName: gitauwairimu/prod-frontend
-#     newTag: 1.2.5-c96001a-prod
+#     newTag: 1.2.6-58a513a-prod
 
 # patchesStrategicMerge:
 #   - backend-patch.yaml
@@ -30,10 +30,10 @@ resources:
 images:
   - name: gitauwairimu/chama-backend
     newName: gitauwairimu/prod-backend
-    newTag: 1.2.5-c96001a-prod
+    newTag: 1.2.6-58a513a-prod
   - name: gitauwairimu/chama-frontend
     newName: gitauwairimu/prod-frontend
-    newTag: 1.2.4-3bc8f5d-prod
+    newTag: 1.2.6-58a513a-prod
 
 patches:
   - path: backend-patch.yaml
