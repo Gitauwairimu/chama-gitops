@@ -26,6 +26,7 @@ namespace: chama-production
 
 resources:
   - ../base
+  - backend-hpa.yaml
 
 images:
   - name: gitauwairimu/chama-backend

@@ -4,4 +4,4 @@ resources:
   - deployment.yaml
   # - rollout.yaml
   - service.yaml
-  - backend-hpa.yaml
+  # - backend-hpa.yaml
