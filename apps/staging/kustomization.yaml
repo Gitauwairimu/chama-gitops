@@ -7,11 +7,11 @@ resources:
 
 images:
   - name: gitauwairimu/chama-backend
-    newName: gitauwairimu/prod-backend
-    newTag: 1.2.2-dc945a7-prod
+    newName: gitauwairimu/main-backend
+    newTag: 1.2.4-3bc8f5d
   - name: gitauwairimu/chama-frontend
-    newName: gitauwairimu/prod-frontend
-    newTag: 1.2.2-dc945a7-prod
+    newName: gitauwairimu/main-frontend
+    newTag: 1.2.4-3bc8f5d
 
 patches:
   - path: backend-patch.yaml
