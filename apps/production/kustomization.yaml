@@ -26,7 +26,6 @@ namespace: chama-production
 
 resources:
   - ../base
-  - backend-hpa.yaml
 
 images:
   - name: gitauwairimu/chama-backend
@@ -45,3 +44,7 @@ patches:
     target:
       kind: Deployment
       name: frontend
+  - path: hpa-patch.yaml
+    target:
+      kind: HorizontalPodAutoscaler
+      name: backend-hpa

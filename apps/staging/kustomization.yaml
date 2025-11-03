@@ -16,12 +16,16 @@ images:
 patches:
   - path: backend-patch.yaml
     target:
-      kind: Rollout
+      kind: Deployment
       name: backend
   - path: frontend-patch.yaml
     target:
       kind: Deployment
       name: frontend
+  - path: hpa-patch.yaml
+    target:
+      kind: HorizontalPodAutoscaler
+      name: backend-hpa
 
 
 

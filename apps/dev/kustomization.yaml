@@ -64,6 +64,10 @@ patches:
       name: frontend
       namespace: chama-dev  # ← ADD NAMESPACE
     path: frontend-patch.yaml
+  - path: hpa-patch.yaml
+    target:
+      kind: HorizontalPodAutoscaler
+      name: backend-hpa
 
 labels:
   - pairs:
