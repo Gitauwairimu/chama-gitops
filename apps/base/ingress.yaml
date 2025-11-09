@@ -1,10 +1,68 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: chama-ingress
+#   namespace: chama-production
+#   annotations:
+#     # REMOVE rewrite-target - pass paths as-is
+#     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+#     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
+#     nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#   - host: chama.gitauwairimu.com
+#     http:
+#       paths:
+#       - path: /api
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+#       - path: /docs
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+#       - path: /system
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+#       - path: /openapi.json
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: frontend
+#             port:
+#               number: 80
+
+
+
+
+
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: chama-ingress
   namespace: chama-production
   annotations:
-    # REMOVE rewrite-target - pass paths as-is
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
@@ -15,13 +73,16 @@ spec:
   - host: chama.gitauwairimu.com
     http:
       paths:
-      - path: /api
+      # API routes - rewrite /api/xxx to /xxx in backend
+      - path: /api(/|$)(.*)
         pathType: Prefix
         backend:
           service:
             name: backend
             port:
               number: 8000
+      
+      # Other backend routes
       - path: /docs
         pathType: Prefix
         backend:
@@ -29,6 +90,7 @@ spec:
             name: backend
             port:
               number: 8000
+      
       - path: /system
         pathType: Prefix
         backend:
@@ -36,6 +98,7 @@ spec:
             name: backend
             port:
               number: 8000
+      
       - path: /openapi.json
         pathType: Prefix
         backend:
@@ -43,7 +106,9 @@ spec:
             name: backend
             port:
               number: 8000
-      - path: /
+      
+      # Frontend - everything else
+      - path: /(.*)
         pathType: Prefix
         backend:
           service:
