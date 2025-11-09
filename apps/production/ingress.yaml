@@ -89,7 +89,17 @@ spec:
             name: frontend
             port:
               number: 80
-      # Add these auth routes to backend
+      
+      - path: /system-admin
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      
+
+
       - path: /login
         pathType: Exact
         backend:
