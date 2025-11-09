@@ -269,11 +269,3 @@ spec:
             name: backend
             port:
               number: 8000
-    # Add this as the LAST route (lowest priority)
-      - path: /(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: backend
-            port:
-              number: 8000
