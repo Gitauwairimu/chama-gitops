@@ -100,181 +100,181 @@ spec:
               number: 8000
                 
       
-      # # ✅ Existing routes
-      # - path: /system-admin
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      # ✅ Existing routes
+      - path: /system-admin
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # # ✅ Add these missing routes:
-      # - path: /audit-logs
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      # ✅ Add these missing routes:
+      - path: /audit-logs
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /chamas
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /chamas
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /members
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /members
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /contributions
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /contributions
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /loans
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /loans
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /loan-repayments
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /loan-repayments
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /loan-products
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /loan-products
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /meetings
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /meetings
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /penalties
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /penalties
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /group-accounts
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /group-accounts
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /account-transactions
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /account-transactions
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /permissions
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /permissions
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # - path: /bonuses
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      - path: /bonuses
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
       
-      # # Your existing exact routes...
-      # - path: /login
-      #   pathType: Exact
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /register
-      #   pathType: Exact
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /logout
-      #   pathType: Exact
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /me
-      #   pathType: Exact
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /refresh
-      #   pathType: Exact
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /api
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /docs
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /system
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
-      # - path: /openapi.json
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend
-      #       port:
-      #         number: 8000
+      # Your existing exact routes...
+      - path: /login
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /register
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /logout
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /me
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /refresh
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /docs
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /system
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /openapi.json
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
