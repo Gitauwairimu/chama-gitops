@@ -8,10 +8,10 @@ resources:
 images:
   - name: gitauwairimu/chama-backend
     newName: gitauwairimu/main-backend
-    newTag: 1.2.7-4d9dd47
+    newTag: 1.2.8-21e5e6d
   - name: gitauwairimu/chama-frontend
     newName: gitauwairimu/main-frontend
-    newTag: 1.2.7-4d9dd47
+    newTag: 1.2.8-21e5e6d
 
 patches:
   - path: backend-patch.yaml
@@ -44,10 +44,10 @@ patches:
 # images:
 #   - name: gitauwairimu/chama-backend
 #     newName: gitauwairimu/main-backend
-#     newTag: 1.2.7-4d9dd47
+#     newTag: 1.2.8-21e5e6d
 #   - name: gitauwairimu/chama-frontend
 #     newName: gitauwairimu/main-frontend
-#     newTag: 1.2.7-4d9dd47
+#     newTag: 1.2.8-21e5e6d
 
 # # Use the new patches format instead of deprecated patchesStrategicMerge
 # patches:
