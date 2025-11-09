@@ -26,6 +26,9 @@
 
 
 
+
+
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -62,6 +65,13 @@ spec:
             port:
               number: 8000
       - path: /system
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /openapi.json
         pathType: Prefix
         backend:
           service:
