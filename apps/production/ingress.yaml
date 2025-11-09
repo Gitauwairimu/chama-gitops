@@ -2,11 +2,16 @@
 # kind: Ingress
 # metadata:
 #   name: chama-ingress
+#   namespace: chama-production
 #   annotations:
-#     nginx.ingress.kubernetes.io/rewrite-target: /
+#     # ❌ REMOVE or CHANGE this line - it's stripping the path prefixes
+#     # nginx.ingress.kubernetes.io/rewrite-target: /
+#     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 # spec:
+#   ingressClassName: nginx
 #   rules:
-#   - http:
+#   - host: chama.gitauwairimu.com
+#     http:
 #       paths:
 #       - path: /
 #         pathType: Prefix
@@ -22,6 +27,41 @@
 #             name: backend
 #             port:
 #               number: 8000
+#       - path: /docs
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+#       - path: /system
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+#       - path: /openapi.json
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: backend
+#             port:
+#               number: 8000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -35,8 +75,6 @@ metadata:
   name: chama-ingress
   namespace: chama-production
   annotations:
-    # ❌ REMOVE or CHANGE this line - it's stripping the path prefixes
-    # nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
@@ -51,6 +89,43 @@ spec:
             name: frontend
             port:
               number: 80
+      # Add these auth routes to backend
+      - path: /login
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /register
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /logout
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /me
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      - path: /refresh
+        pathType: Exact
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+      # Your existing backend routes
       - path: /api
         pathType: Prefix
         backend:
