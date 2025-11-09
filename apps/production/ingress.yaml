@@ -88,17 +88,8 @@ spec:
           service:
             name: frontend
             port:
-              number: 80
-      
-    # Add this as the LAST route (lowest priority)
-      - path: /(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: backend
-            port:
-              number: 8000
-                
+              number: 80              
+
       
       # ✅ Existing routes
       - path: /system-admin
@@ -272,6 +263,14 @@ spec:
             port:
               number: 8000
       - path: /openapi.json
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+    # Add this as the LAST route (lowest priority)
+      - path: /(.*)
         pathType: Prefix
         backend:
           service:
